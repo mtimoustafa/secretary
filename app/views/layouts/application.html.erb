@@ -11,6 +11,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="app">
+      <div class="app__wrapper">
+        <header class="app__heading">
+          <h1 class="heading__title">
+            Secretary
+          </h1>
+
+          <p class="heading__subtitle">
+            Here's what happened to your emails when you weren't looking...
+          </p>
+        </header>
+
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

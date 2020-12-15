@@ -1,0 +1,13 @@
+<div class="contacts">
+  <% if @contacts.present? %>
+    <% @contacts.each do |contact| %>
+      <div class="contact">
+        <%= contact %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="contacts__empty">
+      <p>No contacts yet.</p>
+    </div>
+  <% end %>
+</div>
