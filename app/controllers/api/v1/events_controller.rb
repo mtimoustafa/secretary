@@ -1,4 +1,6 @@
 class Api::V1::EventsController < ApplicationController
+  skip_before_action :authorise_user
+
   # The authenticity token is used to prevent CSRF attacks.
   # Seeing as this is a general API endpoint, we don't need this protection. 
   skip_before_action :verify_authenticity_token
@@ -49,6 +51,8 @@ class Api::V1::EventsController < ApplicationController
     sanitised_params.delete(:event)
     sanitised_params.delete(:type)
 
+    pp params
+    pp sanitised_params
     return sanitised_params
   end
 end

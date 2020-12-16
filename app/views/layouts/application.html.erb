@@ -18,12 +18,18 @@
             Secretary
           </h1>
 
-          <p class="heading__subtitle">
-            Here's what happened to your emails when you weren't looking...
-          </p>
+          <% if logged_in? %>
+            <p class="heading__subtitle">
+              Here's what happened to your emails when you weren't looking...
+            </p>
+          <% end %>
         </header>
 
         <%= yield %>
+
+        <% if logged_in? %>
+          <%= button_to 'Log out', logout_path, method: :get %>
+        <% end %>
       </div>
     </div>
   </body>
