@@ -13,13 +13,6 @@ class Api::V1::EventsController < ApplicationController
     render json: {}, status: 200
   end
 
-  # PATCH /api/v1/events
-  # PUT /api/v1/events
-  def update
-    # TODO
-    render json: events_params, status: 200
-  end
-
   private
 
   def events_params

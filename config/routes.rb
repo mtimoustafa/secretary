@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post 'events', to: 'events#create'
-      match 'events', to: 'events#update', via: [:patch, :put]
     end
   end
 end
