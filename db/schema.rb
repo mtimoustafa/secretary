@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_15_202836) do
+ActiveRecord::Schema.define(version: 2020_12_16_015549) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "email"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_12_15_202836) do
     t.string "sg_event_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "event_type", default: 0
+    t.string "event_type", default: "processed"
     t.index ["contact_id"], name: "index_events_on_contact_id"
   end
 
