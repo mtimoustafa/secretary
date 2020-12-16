@@ -5,10 +5,12 @@ class Api::V1::EventsController < ApplicationController
 
   # POST /api/v1/events
   def create
-    # TODO: if no contact, create one
-    # TODO: add event to contact
-    # TODO: return event as confirmation
-    render json: events_params, status: 200
+    contact = Contact.find_or_create_by(email: events_params[:email])
+
+    user = contact.events.find_or_create_by(sg_event_id: events_params[:sg_event_id])
+    user.update(events_params.except(:email))
+
+    render json: {}, status: 200
   end
 
   # PATCH /api/v1/events
@@ -28,5 +30,16 @@ class Api::V1::EventsController < ApplicationController
       :event,
       :type
     )
+
+    # Rename :event param to :event_type
+    # Event types 'bounce' and 'blocked' come in as two separate parameters.
+    # When it's bounce, :event is 'bounce' and :type is 'bounce'.
+    # When it's blocked, :event is 'bounce' and :event is 'blocked'.
+    sanitised_params[:event_type] = (sanitised_params[:event] == 'bounce') ? sanitised_params[:type] : sanitised_params[:event]
+
+    sanitised_params.delete(:event)
+    sanitised_params.delete(:type)
+
+    return sanitised_params
   end
 end

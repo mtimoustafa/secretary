@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_170814) do
+ActiveRecord::Schema.define(version: 2020_12_16_183118) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "email"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_12_16_170814) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "event_type", default: "processed"
     t.index ["contact_id"], name: "index_events_on_contact_id"
+    t.index ["sg_event_id"], name: "index_events_on_sg_event_id", unique: true
   end
 
   add_foreign_key "events", "contacts"
