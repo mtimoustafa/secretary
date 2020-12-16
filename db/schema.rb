@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_183118) do
+ActiveRecord::Schema.define(version: 2020_12_16_190108) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "email"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_12_16_183118) do
 
   create_table "events", force: :cascade do |t|
     t.integer "contact_id", null: false
-    t.datetime "timestamp"
+    t.integer "timestamp"
     t.string "sg_event_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

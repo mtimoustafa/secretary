@@ -1,8 +1,8 @@
 <div class="contacts">
   <% if @contacts.present? %>
     <% @contacts.each do |contact| %>
-      <div class="contact">
-        <%= contact %>
+      <div class="contacts__contact">
+        <a href="<%= contact_path(contact.id) %>"><%= contact.email %></a>
       </div>
     <% end %>
   <% else %>
