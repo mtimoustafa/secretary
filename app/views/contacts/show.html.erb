@@ -4,7 +4,7 @@
   <h2>Events for <%= @contact.email %></h2>
 
   <div class="contact__events">
-    <% @contact.events.each do |event| %>
+    <% @events.each do |event| %>
       <%# TODO: pretty timestamp should be in a model method %>
       <% timestamp = Time.at(event.timestamp).to_datetime %>
       <div class="contact__event">

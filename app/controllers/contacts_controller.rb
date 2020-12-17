@@ -5,5 +5,6 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    @events = @contact.events.order('timestamp DESC')
   end
 end
