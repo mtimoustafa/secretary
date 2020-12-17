@@ -7,4 +7,5 @@ class Event < ApplicationRecord
   validates :contact, presence: true
   validates :event_type, inclusion: { in: event_types, message: 'Invalid event type' }
   validates :timestamp, numericality: { only_integer: true, message: 'timestamp must be in Unix format' }
+  validates :sg_event_id, presence: true
 end
