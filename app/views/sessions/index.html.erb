@@ -1,13 +1,21 @@
-<h2>Log In</h2>
+<div class="login">
+  <h2 class="login__title">Log In</h2>
 
-<%= form_tag '/login' do %>
-  <%= flash[:alert] if flash[:alert].present? %>
+  <%= form_tag login_path, class: 'login__form' do %>
+    <% if flash[:alert].present? %>
+      <span class="login__error-message"><%= flash[:alert] %></span>
+    <% end %>
 
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+    <div class="login__form-item">
+      <%= label_tag :username, nil, class: 'login__form-label' %>
+      <%= text_field_tag :username, '', class: 'login__form-input' %>
+    </div>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+    <div class="login__form-item">
+      <%= label_tag :password, nil, class: 'login__form-label' %>
+      <%= password_field_tag :password, '', class: 'login__form-input' %>
+    </div>
 
-  <%= submit_tag 'Log In' %>
-<% end %>
+    <%= submit_tag 'Log In', class: 'login__form-submit' %>
+  <% end %>
+</div>

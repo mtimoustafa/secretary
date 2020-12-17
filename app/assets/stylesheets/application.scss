@@ -25,6 +25,18 @@ body {
   background-color: #eee;
 }
 
+button,
+input[type="submit"] {
+  padding: 0.4rem 1.2rem;
+  background: #eee;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+
+  &:hover, &:focus, &:active {
+    background: #bbb;
+  }
+}
+
 .app {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -52,14 +64,18 @@ body {
 
 .app__heading {
   margin-bottom: 3rem;
+}
 
-  .heading__title {
-    margin: 0;
-    margin-bottom: 0.5rem;
-  }
+.heading__logout {
+  margin-bottom: 2rem;
+}
 
-  .heading__subtitle {
-    margin: 0;
-    font-style: italic;
-  }
+.heading__title {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.heading__subtitle {
+  margin: 0;
+  font-style: italic;
 }

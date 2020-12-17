@@ -1,3 +1,40 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.login__title,
+.logout__title {
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.login__error-message {
+  font-size: 0.9rem;
+  color: #a81d32;
+  margin-bottom: 1rem;
+}
+
+.login__form-item {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.login__form-label {
+  display: inline-block;
+  width: 6.8rem;
+}
+
+.login__form-input {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.login__form-submit {
+  margin-top: 2rem;
+  width: 7rem;
+}

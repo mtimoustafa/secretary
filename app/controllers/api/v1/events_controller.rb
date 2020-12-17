@@ -51,7 +51,7 @@ class Api::V1::EventsController < ApplicationController
     sanitised_params.delete(:event)
     sanitised_params.delete(:type)
 
-    pp params
+    pp params[0]
     pp sanitised_params
     return sanitised_params
   end

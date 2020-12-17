@@ -1,11 +1,15 @@
-<h2>Sign Up</h2>
+<h2 class="logout__title">Sign Up</h2>
 
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+<%= form_for @user, html: { class: 'login__form' } do |f| %>
+  <div class="login__form-item">
+    <%= f.label :username, class: 'login__form-label' %>
+    <%= f.text_field :username, class: 'login__form-input' %>
+  </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <div class="login__form-item">
+    <%= f.label :password, class: 'login__form-label' %>
+    <%= f.password_field :password, class: 'login__form-input' %>
+  </div>
 
-  <%= f.submit %>
+  <%= f.submit 'Sign up', class: 'login__form-submit' %>
 <% end %>

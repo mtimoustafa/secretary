@@ -1,3 +1,55 @@
-// Place all the styles related to the Contacts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.contacts__title {
+  margin: 0;
+}
+
+.contacts__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contacts__contact,
+.contact__event {
+  display: block;
+  margin: 1rem;
+  padding: 1.2rem;
+
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+.contacts__contact {
+  width: 23rem;
+  background: #eee;
+
+  &:active {
+    background: #bbb;
+  }
+}
+
+.contact__event {
+  width: 30rem;
+}
+
+.contacts__email {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact__events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact__title {
+  display: inline;
+}
+
+.contact__sg-event-id {
+  font-style: italic;
+  font-size: 0.8rem;
+}
